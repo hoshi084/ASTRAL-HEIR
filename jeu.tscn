@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://b61v7ywx58d82"]
+
+[ext_resource type="Script" uid="uid://b1jcv0g4pllf0" path="res://jeu.gd" id="1_s1xry"]
+[ext_resource type="PackedScene" uid="uid://dom1qtagybol" path="res://personage.tscn" id="2_h8l20"]
+[ext_resource type="PackedScene" uid="uid://kyygabuluy1q" path="res://level2.tscn" id="2_r6dh1"]
+[ext_resource type="PackedScene" uid="uid://cjr3ln3xixv8n" path="res://cristal.tscn" id="3_h8l20"]
+[ext_resource type="PackedScene" uid="uid://dqxo6utsa1p6h" path="res://menu_demarrage.tscn" id="5_0yqk5"]
+
+[node name="jeu" type="Node2D" unique_id=1873003971]
+scale = Vector2(3, 3)
+script = ExtResource("1_s1xry")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=549247770]
+visible = false
+color = Color(0.011155186, 0.050130576, 0.22993281, 1)
+
+[node name="level" parent="." unique_id=1563498389 instance=ExtResource("2_r6dh1")]
+
+[node name="EmplacementsSteles" type="Node2D" parent="." unique_id=1490710869]
+
+[node name="Steles1" type="Marker2D" parent="EmplacementsSteles" unique_id=954203226]
+position = Vector2(1198, -398.33334)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles1" unique_id=1597048029 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="Steles2" type="Marker2D" parent="EmplacementsSteles" unique_id=80551001]
+position = Vector2(1854.0001, -926.3333)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles2" unique_id=2016253947 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="Steles3" type="Marker2D" parent="EmplacementsSteles" unique_id=1097275069]
+position = Vector2(222, -574.3333)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles3" unique_id=1176026486 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="Steles4" type="Marker2D" parent="EmplacementsSteles" unique_id=442915064]
+position = Vector2(638, -941.6666)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles4" unique_id=185645602 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="Steles5" type="Marker2D" parent="EmplacementsSteles" unique_id=957496845]
+position = Vector2(30, -1486)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles5" unique_id=170265055 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="Steles6" type="Marker2D" parent="EmplacementsSteles" unique_id=1693097406]
+position = Vector2(1182, -1486)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles6" unique_id=1970017747 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="Steles7" type="Marker2D" parent="EmplacementsSteles" unique_id=1910250743]
+position = Vector2(1998.0001, -1630)
+metadata/_edit_group_ = true
+
+[node name="Cristal" parent="EmplacementsSteles/Steles7" unique_id=263244934 instance=ExtResource("3_h8l20")]
+position = Vector2(1, 6)
+
+[node name="personage" parent="." unique_id=137360923 instance=ExtResource("2_h8l20")]
+visible = false
+position = Vector2(1117, -387.66666)
+
+[node name="menuDemarrage" parent="." unique_id=413660534 instance=ExtResource("5_0yqk5")]
+
+[node name="CameraMenu" type="Camera2D" parent="." unique_id=737688315]
+position = Vector2(1043.6666, -993.6667)
+scale = Vector2(14.562426, -4.7330813)
+zoom = Vector2(0.125, 0.125)
+
+[node name="Timer" type="Timer" parent="." unique_id=477781355]
+wait_time = 2.0
+
+[connection signal="pressed" from="menuDemarrage/Control/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="menuDemarrage"]

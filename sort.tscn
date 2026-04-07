@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://btj45x71ofsfa"]
+
+[ext_resource type="Script" uid="uid://b7xx3t0tvmxnq" path="res://sort.gd" id="1_kus75"]
+[ext_resource type="Texture2D" uid="uid://d0lmxqkryckxf" path="res://sprit/attaque1.png" id="2_sxuyt"]
+[ext_resource type="Texture2D" uid="uid://cjbepub37h3u4" path="res://sprit/Gemini_Generated_Image_txmjiotxmjiotxmj.png" id="3_sxuyt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_si2pb"]
+atlas = ExtResource("2_sxuyt")
+region = Rect2(0, 0, 40, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhw0p"]
+atlas = ExtResource("2_sxuyt")
+region = Rect2(0, 28, 40, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eh5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_si2pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhw0p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_srdp6"]
+radius = 13.0
+
+[node name="sort" type="Area2D" unique_id=245284718]
+scale = Vector2(0.3, 0.3)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_kus75")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1776497881]
+sprite_frames = SubResource("SpriteFrames_1eh5t")
+frame_progress = 0.2704795
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968353211]
+position = Vector2(8, -1)
+shape = SubResource("CircleShape2D_srdp6")
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1510529014]
+position = Vector2(8.000001, -0.99999905)
+scale = Vector2(0.07876713, 0.06849315)
+energy = 0.5
+texture = ExtResource("3_sxuyt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
