@@ -12,9 +12,7 @@ func _ready():
 	$menuDemarrage/Control/ButtonPlay.pressed.connect(_on_play_clique)
 	$menuDemarrage/Control/ButtonLancer.pressed.connect(_on_lancer_clique)
 	peut_selectionner = false
-	await get_tree().create_timer(1.0).timeout
-	$Timer.start()
-	
+	await get_tree().create_timer(1.0).timeout	
 
 func _on_play_clique():
 	# On cache juste le bouton Play et le texte, mais on garde le menu affiché
