@@ -4,11 +4,13 @@ extends Node2D
 var rect_vide = Rect2(1344.0, 1440.0, 64.0, 80.0) 
 var rect_brillant = Rect2(1280.0, 1264.0, 64.0, 80.0)
 @export var ennemi_scene : PackedScene = preload("res://ennemi.tscn")
+var pv = 100
 
 var est_allume = false
 
 func _ready():
 	# On s'assure que le cristal commence éteint
+	add_to_group("cristaux")
 	$Visuel.region_rect = rect_vide
 	$PointLight2D.enabled = false
 	$LumiereRouge.enabled = true
@@ -44,12 +46,13 @@ func allumer_ou_eteindre():
 
 func _on_timer_timeout():
 	var script_principal = get_tree().current_scene
-	
 	if script_principal.partie_lancee and not est_allume:
 		var nouveau_monstre = ennemi_scene.instantiate()
-		# --- CORRECTION ICI ---
-		# On utilise la position globale pour placer le monstre dans le monde
 		nouveau_monstre.global_position = global_position
-		
-		# On l'ajoute à la scène principale
 		script_principal.add_child(nouveau_monstre)
+		
+func recevoir_degats(montant):
+	if est_allume:
+		pv -= montant
+		if pv <= 0:
+			allumer_ou_eteindre() # Il s'éteint s'il n'a plus de PV
