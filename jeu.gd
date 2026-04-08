@@ -40,6 +40,7 @@ func mettre_a_jour_compteur(valeur):
 func _on_lancer_clique():
 	
 	$barreStat/StatBar.show() # Affiche la progressbar
+	$barreStat/StatBar.enregistrer_cristaux_allumes()
 	
 	var liste_cristaux = []
 	
