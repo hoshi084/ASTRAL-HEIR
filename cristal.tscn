@@ -7,8 +7,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dh7ns"]
 size = Vector2(72, 88)
 
-[node name="Cristal" type="Node2D" unique_id=1597048029]
+[node name="Cristal" type="Node2D" unique_id=1597048029 groups=["cristaux"]]
 script = ExtResource("1_dh7ns")
+ennemi_scene = null
 
 [node name="Visuel" type="Sprite2D" parent="." unique_id=1445959769]
 texture = ExtResource("2_3x5j6")

@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var ennemi_scene : PackedScene = preload("res://ennemi.tscn")
+var pv = 100
 
 var rect_vide = Rect2(1344.0, 1440.0, 64.0, 80.0)
 var rect_brillant = Rect2(1280.0, 1264.0, 64.0, 80.0)
@@ -44,7 +45,6 @@ func allumer_ou_eteindre():
 
 func _on_timer_timeout():
 	var script_principal = get_tree().current_scene
-	
 	if script_principal.partie_lancee and not est_allume:
 		var nouveau_monstre = ennemi_scene.instantiate()
 		nouveau_monstre.global_position = global_position
