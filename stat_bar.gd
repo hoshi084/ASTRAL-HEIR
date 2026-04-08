@@ -17,34 +17,29 @@ func _ready():
 	pv_bar.min_value = 0
 	pv_bar.max_value = 100
 	pv_bar.value = 100
-	pv_bar.show_percentage = false
 
 	mana_bar.min_value = 0
 	mana_bar.max_value = 100
 	mana_bar.value = 100
-	mana_bar.show_percentage = false
 
 	terror_bar.min_value = 0
 	terror_bar.max_value = 100
 	terror_bar.value = 0
-	terror_bar.show_percentage = false
 
 	crystal1_bar.min_value = 0
 	crystal1_bar.max_value = 100
-	crystal1_bar.show_percentage = false
 
 	crystal2_bar.min_value = 0
 	crystal2_bar.max_value = 100
-	crystal2_bar.show_percentage = false
 
 	crystal3_bar.min_value = 0
 	crystal3_bar.max_value = 100
-	crystal3_bar.show_percentage = false
 
 	crystal4_bar.min_value = 0
 	crystal4_bar.max_value = 100
-	crystal4_bar.show_percentage = false
-	
+
+
+# 🔥 appelée UNE SEULE FOIS au lancement
 func enregistrer_cristaux_allumes():
 	var cristaux = get_tree().get_nodes_in_group("cristaux")
 
@@ -58,22 +53,20 @@ func enregistrer_cristaux_allumes():
 	for cristal in cristaux:
 		if cristal.est_allume:
 			match index:
-				0:
-					Cristal_pv1 = cristal
-				1:
-					Cristal_pv2 = cristal
-				2:
-					Cristal_pv3 = cristal
-				3:
-					Cristal_pv4 = cristal
+				0: Cristal_pv1 = cristal
+				1: Cristal_pv2 = cristal
+				2: Cristal_pv3 = cristal
+				3: Cristal_pv4 = cristal
 			
 			index += 1
-
+			
 			if index >= 4:
 				break
 
 	mettre_a_jour_barres_cristaux()
-	
+
+
+# 🔁 appelée à chaque dégât
 func mettre_a_jour_barres_cristaux():
 	crystal1_bar.value = Cristal_pv1.pv if Cristal_pv1 != null else 0
 	crystal2_bar.value = Cristal_pv2.pv if Cristal_pv2 != null else 0
