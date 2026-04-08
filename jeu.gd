@@ -11,6 +11,9 @@ func _ready():
 	$personage.process_mode = Node.PROCESS_MODE_DISABLED
 	$menuDemarrage/Control/ButtonPlay.pressed.connect(_on_play_clique)
 	$menuDemarrage/Control/ButtonLancer.pressed.connect(_on_lancer_clique)
+	
+	$barreStat/StatBar.hide() # Cache la progressbar
+	
 	peut_selectionner = false
 	await get_tree().create_timer(1.0).timeout
 	
@@ -35,6 +38,9 @@ func mettre_a_jour_compteur(valeur):
 		$menuDemarrage/Control/ButtonLancer.hide()
 
 func _on_lancer_clique():
+	
+	$barreStat/StatBar.show() # Affiche la progressbar
+	
 	var liste_cristaux = []
 	
 	# ÉTAPE 1 : On boucle sur tous les cristaux
