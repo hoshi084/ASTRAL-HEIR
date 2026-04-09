@@ -81,11 +81,15 @@ position = Vector2(1117, -387.66666)
 [node name="menuDemarrage" parent="." unique_id=347256708 instance=ExtResource("5_0yqk5")]
 
 [node name="Control" parent="menuDemarrage" index="0" unique_id=526840401]
-anchors_preset = -1
-anchor_right = 0.034722224
-anchor_bottom = 0.061728396
 size_flags_horizontal = 4
-metadata/_edit_use_anchors_ = true
+
+[node name="InstructionLabel" parent="menuDemarrage/Control" index="2" unique_id=1082842282]
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_top = 0.0
+offset_bottom = 39.0
+grow_vertical = 1
 
 [node name="CameraMenu" type="Camera2D" parent="." unique_id=737688315]
 position = Vector2(1043.6666, -993.6667)
