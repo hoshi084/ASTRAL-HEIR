@@ -17,6 +17,10 @@ func _ready():
 	
 	$barreStat.hide()
 	
+	# cacher la minimap
+	$MiniMapUI.set_joueur($personage)
+	$MiniMapUI.hide()
+	
 	peut_selectionner = false
 	await get_tree().create_timer(1.0).timeout
 
@@ -38,6 +42,10 @@ func mettre_a_jour_compteur(valeur):
 		$menuDemarrage/Control/ButtonLancer.hide()
 
 func _on_lancer_clique():
+	# on affiche la minimap
+	$MiniMapUI.show()
+	
+	# on affiche la barre de stat
 	$barreStat.show()
 	$barreStat.enregistrer_cristaux_allumes()
 	

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dbedhq2oa2083"]
+
+[ext_resource type="Script" uid="uid://qm4l7jt1crku" path="res://minimap.gd" id="1_g40fn"]
+
+[node name="MiniMapUI" type="CanvasLayer" unique_id=1458660386]
+script = ExtResource("1_g40fn")
+
+[node name="Panel" type="Panel" parent="." unique_id=879006972]
+offset_left = 930.0
+offset_right = 1130.0002
+offset_bottom = 200.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Panel" unique_id=178171872]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="SubViewport" type="SubViewport" parent="Panel/SubViewportContainer" unique_id=1298561764]
+handle_input_locally = false
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="Panel/SubViewportContainer/SubViewport" unique_id=2063892309]
+zoom = Vector2(8, 8)
