@@ -1,0 +1,253 @@
+[gd_scene format=3 uid="uid://b37m5l8ti6flv"]
+
+[ext_resource type="Script" uid="uid://cs3tspfwehhcu" path="res://stat_bar.gd" id="1_smgcs"]
+[ext_resource type="Texture2D" uid="uid://dgjit5afx4qbh" path="res://sprit/barre de stat.png" id="2_kkcy1"]
+[ext_resource type="Texture2D" uid="uid://dk4siedrbwtl4" path="res://sprit/portrait.png" id="3_rl6q0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d86h"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.9066271, 0.099786125, 0.10020668, 0.3019608)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fkvr"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.68027604, 0, 0.010963222, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rv0m"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.101960786, 0.3137255, 0.95686275, 0.3019608)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_obs4i"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.0488848, 0, 0.8797177, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7f7a"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.33884218, 7.7827426e-05, 0.33883965, 0.3019608)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_07b14"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.2220321, 3.3835917e-05, 0.22239819, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+<<<<<<< Updated upstream
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43jn"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.5899028, 0.5899029, 0.5899029, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+=======
+>>>>>>> Stashed changes
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpose"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+<<<<<<< Updated upstream
+bg_color = Color(1, 1, 1, 0.4)
+=======
+bg_color = Color(1, 1, 1, 1)
+>>>>>>> Stashed changes
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1yn5"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvjer"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+
+[node name="barreStat" type="CanvasLayer" unique_id=1812342214]
+
+[node name="StatBar" type="Control" parent="." unique_id=1084560491]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1881.8181
+offset_top = 2563.6367
+offset_right = 1881.8181
+offset_bottom = 2563.6367
+scale = Vector2(2.0486453, 1.3921369)
+pivot_offset = Vector2(692, 81)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_smgcs")
+metadata/_edit_group_ = true
+
+[node name="Frame" type="NinePatchRect" parent="StatBar" unique_id=1922094139]
+layout_mode = 0
+offset_left = -434.0
+offset_top = -183.33334
+offset_right = 1873.0
+offset_bottom = 367.66666
+texture = ExtResource("2_kkcy1")
+
+[node name="Portrait" type="TextureRect" parent="StatBar" unique_id=609792245]
+layout_mode = 0
+offset_left = -110.0
+offset_top = -18.333221
+offset_right = 82.0
+offset_bottom = 173.66678
+texture = ExtResource("3_rl6q0")
+expand_mode = 1
+
+[node name="PvBar" type="ProgressBar" parent="StatBar" unique_id=2141153195]
+layout_mode = 0
+offset_left = 137.0
+offset_top = -17.333344
+offset_right = 576.0
+offset_bottom = 72.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_4d86h")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6fkvr")
+value = 80.0
+show_percentage = false
+
+[node name="ManaBar" type="ProgressBar" parent="StatBar" unique_id=728655862]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 84.66666
+offset_right = 576.0
+offset_bottom = 174.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_0rv0m")
+theme_override_styles/fill = SubResource("StyleBoxFlat_obs4i")
+value = 80.0
+show_percentage = false
+
+[node name="TerrorBar" type="ProgressBar" parent="StatBar" unique_id=347729696]
+layout_mode = 0
+offset_left = 598.0
+offset_top = -18.333344
+offset_right = 783.0
+offset_bottom = 172.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_w7f7a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_07b14")
+value = 72.63
+show_percentage = false
+
+[node name="Crystal1Bar" type="ProgressBar" parent="StatBar" unique_id=1619583810]
+layout_mode = 0
+offset_left = 803.0
+offset_top = -18.333344
+offset_right = 1038.0
+offset_bottom = 76.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_q43jn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cpose")
+value = 80.0
+show_percentage = false
+
+[node name="Crystal2Bar" type="ProgressBar" parent="StatBar" unique_id=1563343785]
+layout_mode = 0
+offset_left = 803.0
+offset_top = 89.66666
+offset_right = 1038.0
+offset_bottom = 175.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_q43jn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cpose")
+value = 80.0
+show_percentage = false
+
+[node name="Crystal3Bar" type="ProgressBar" parent="StatBar" unique_id=387705862]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = -18.333344
+offset_right = 1291.0
+offset_bottom = 76.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_q43jn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cpose")
+value = 80.0
+show_percentage = false
+
+[node name="Crystal4Bar" type="ProgressBar" parent="StatBar" unique_id=216255143]
+layout_mode = 0
+offset_left = 1053.0
+offset_top = 89.66666
+offset_right = 1290.0
+offset_bottom = 175.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_q43jn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cpose")
+value = 80.0
+show_percentage = false
+
+[node name="Bar" type="ProgressBar" parent="StatBar" unique_id=2000637940]
+layout_mode = 0
+offset_left = 1309.0
+offset_top = -18.333344
+offset_right = 1586.0
+offset_bottom = 177.66666
+theme_override_styles/background = SubResource("StyleBoxFlat_n1yn5")
+theme_override_styles/fill = SubResource("StyleBoxFlat_wvjer")
+value = 100.0
+show_percentage = false
