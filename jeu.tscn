@@ -200,17 +200,14 @@ ennemi_scene = ExtResource("4_0yqk5")
 [node name="personage" parent="." unique_id=137360923 instance=ExtResource("2_h8l20")]
 position = Vector2(1117, -387.66666)
 
-[node name="menuDemarrage" parent="." unique_id=413660534 instance=ExtResource("5_0yqk5")]
+[node name="menuDemarrage" parent="." unique_id=347256708 instance=ExtResource("5_0yqk5")]
 
-[node name="TextureRect" parent="menuDemarrage/Control" parent_id_path=PackedInt32Array(413660534, 526840401) index="0" unique_id=513768288]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 0.0
-offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Control" parent="menuDemarrage" index="0" unique_id=526840401]
+anchors_preset = -1
+anchor_right = 0.034722224
+anchor_bottom = 0.061728396
+size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="barreStat" type="CanvasLayer" parent="." unique_id=735735098]
 scale = Vector2(0.22, 0.22)
@@ -344,7 +341,7 @@ zoom = Vector2(0.125, 0.125)
 [node name="Timer" type="Timer" parent="." unique_id=477781355]
 wait_time = 2.0
 
-[connection signal="pressed" from="menuDemarrage/Control/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="pressed" from="menuDemarrage/Control/VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="menuDemarrage"]

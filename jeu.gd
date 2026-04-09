@@ -9,7 +9,7 @@ func _ready():
 	$CameraMenu.make_current()
 	$personage.hide()
 	$personage.process_mode = Node.PROCESS_MODE_DISABLED
-	$menuDemarrage/Control/ButtonPlay.pressed.connect(_on_play_clique)
+	$menuDemarrage/Control/VBoxContainer/ButtonPlay.pressed.connect(_on_play_clique)
 	$menuDemarrage/Control/ButtonLancer.pressed.connect(_on_lancer_clique)
 	
 	$barreStat/StatBar.hide() # Cache la progressbar
@@ -20,8 +20,8 @@ func _ready():
 func _on_play_clique():
 	# On cache juste le bouton Play et le texte, mais on garde le menu affiché
 	$menuDemarrage/Control/TextureRect.hide() # Cache l'image de fond
-	$menuDemarrage/Control/nomJeu.hide()       # Cache le titre du jeu
-	$menuDemarrage/Control/ButtonPlay.hide()  # Cache le bouton Play
+	$menuDemarrage/Control/VBoxContainer/nomJeu.hide()       # Cache le titre du jeu
+	$menuDemarrage/Control/VBoxContainer/ButtonPlay.hide()  # Cache le bouton Play
 	$menuDemarrage/Control/InstructionLabel.show()
 	
 	peut_selectionner = true
