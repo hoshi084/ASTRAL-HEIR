@@ -76,7 +76,6 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
 
-<<<<<<< Updated upstream
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q43jn"]
 content_margin_left = 2.0
 content_margin_top = 2.0
@@ -89,18 +88,12 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
 
-=======
->>>>>>> Stashed changes
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpose"]
 content_margin_left = 2.0
 content_margin_top = 2.0
 content_margin_right = 2.0
 content_margin_bottom = 2.0
-<<<<<<< Updated upstream
-bg_color = Color(1, 1, 1, 0.4)
-=======
 bg_color = Color(1, 1, 1, 1)
->>>>>>> Stashed changes
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
