@@ -6,7 +6,6 @@ var pv = 100
 var rect_vide = Rect2(1344.0, 1440.0, 64.0, 80.0)
 var rect_brillant = Rect2(1280.0, 1264.0, 64.0, 80.0)
 
-var pv = 100
 var est_allume = false
 
 func _ready():

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cjr3ln3xixv8n" path="res://cristal.tscn" id="3_h8l20"]
 [ext_resource type="PackedScene" uid="uid://c00cpwsjqgrpu" path="res://ennemi.tscn" id="4_0yqk5"]
 [ext_resource type="PackedScene" uid="uid://dqxo6utsa1p6h" path="res://menu_demarrage.tscn" id="5_0yqk5"]
-[ext_resource type="PackedScene" uid="uid://b37m5l8ti6flv" path="res://bar_stat.tscn" id="7_aw23n"]
+[ext_resource type="PackedScene" uid="uid://b61v7ywx58d82" path="res://jeu.tscn" id="7_aw23n"]
 
 [node name="jeu" type="Node2D" unique_id=1873003971]
 scale = Vector2(3, 3)
