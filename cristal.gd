@@ -1,11 +1,10 @@
 extends Node2D
 
 @export var ennemi_scene : PackedScene = preload("res://ennemi.tscn")
-var pv = 100
 
+var pv = 100
 var rect_vide = Rect2(1344.0, 1440.0, 64.0, 80.0)
 var rect_brillant = Rect2(1280.0, 1264.0, 64.0, 80.0)
-
 var est_allume = false
 
 func _ready():
@@ -56,7 +55,7 @@ func recevoir_degats(montant):
 		if pv < 0:
 			pv = 0
 		
-		get_tree().current_scene.get_node("barreStat/StatBar").mettre_a_jour_barres_cristaux()
+		get_tree().current_scene.get_node("barreStat").mettre_a_jour_barres_cristaux()
 		
 		if pv <= 0:
 			allumer_ou_eteindre()

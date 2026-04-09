@@ -125,6 +125,7 @@ corner_radius_bottom_left = 6
 corner_detail = 6
 
 [node name="barreStat" type="CanvasLayer" unique_id=1812342214]
+script = ExtResource("1_smgcs")
 
 [node name="StatBar" type="Control" parent="." unique_id=1084560491]
 layout_mode = 3
@@ -137,7 +138,6 @@ scale = Vector2(2.0486453, 1.3921369)
 pivot_offset = Vector2(692, 81)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-script = ExtResource("1_smgcs")
 metadata/_edit_group_ = true
 
 [node name="Frame" type="NinePatchRect" parent="StatBar" unique_id=1922094139]
