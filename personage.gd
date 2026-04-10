@@ -4,6 +4,8 @@ extends CharacterBody2D
 @export var speed = 600 # How fast the player will move (pixels/sec).
 var screen_size
 
+# on recupère la barre de mana
+@onready var mana_bar = get_tree().current_scene.get_node("barreStat/StatBar/ManaBar")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -51,9 +53,10 @@ func _process(delta):
 
 func tirer():
 	var sort_instance = sort_scene.instantiate()
-	
+	mana_bar.value -= 6
 	sort_instance.position = position 
 	
 	sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
 	
 	get_parent().add_child(sort_instance)
+	
