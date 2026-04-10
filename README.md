@@ -11,16 +11,16 @@ Astral Heir
     
   Contrôles :
 
-    Touches directionnelles / zqsd : Déplacement
+   Touches directionnelles / zqsd : Déplacement
 
-    click : tire un sort
+   click gauche : tire un sort
 
 reste a faire :
 
-  [] ajoute de pv du joueur
-  [] ajoute de pv des enemie
-  [] ajoute d'un colldown au sort
-  [] ajoute d'une deuxième arme de type fusil a pompe
-  [] ajoue d'un écran de game over
-  [] modification du fond noir
-  [] correction des bug de sprite
+- [ ] ajoute de pv du joueur
+- [ ] ajoute de pv des enemie
+- [ ] ajoute d'un colldown au sort
+- [ ] ajoute d'une deuxième arme de type fusil a pompe
+- [ ] ajoue d'un écran de game over
+- [ ] modification du fond noir
+- [ ] correction des bug de sprite
