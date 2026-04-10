@@ -40,6 +40,9 @@ func allumer_ou_eteindre():
 		$LumiereRouge.enabled = true
 		$Timer.start()
 		get_tree().current_scene.mettre_a_jour_compteur(-1)
+		if pv <= 0:
+			$PointLight2D.enabled = false
+			$LumiereRouge.enabled = false
 
 func recevoir_degats(montant):
 	if est_allume:
