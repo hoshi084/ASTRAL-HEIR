@@ -9,7 +9,6 @@ size = Vector2(72, 88)
 
 [node name="Cristal" type="Node2D" unique_id=1597048029 groups=["cristaux"]]
 script = ExtResource("1_dh7ns")
-ennemi_scene = null
 
 [node name="Visuel" type="Sprite2D" parent="." unique_id=1445959769]
 texture = ExtResource("2_3x5j6")
@@ -32,7 +31,7 @@ texture = ExtResource("3_5s8vh")
 shape = SubResource("RectangleShape2D_dh7ns")
 
 [node name="Timer" type="Timer" parent="." unique_id=1848259388]
-wait_time = 3.0
+wait_time = 0.973
 autostart = true
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

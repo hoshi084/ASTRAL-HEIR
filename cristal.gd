@@ -41,13 +41,6 @@ func allumer_ou_eteindre():
 		$Timer.start()
 		get_tree().current_scene.mettre_a_jour_compteur(-1)
 
-func _on_timer_timeout():
-	var script_principal = get_tree().current_scene
-	if script_principal.partie_lancee and not est_allume:
-		var nouveau_monstre = ennemi_scene.instantiate()
-		nouveau_monstre.global_position = global_position
-		script_principal.add_child(nouveau_monstre)
-
 func recevoir_degats(montant):
 	if est_allume:
 		pv -= montant
