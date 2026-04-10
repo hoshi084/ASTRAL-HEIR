@@ -13,7 +13,6 @@ scale = Vector2(3, 3)
 script = ExtResource("1_s1xry")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=549247770]
-visible = false
 color = Color(0.011155186, 0.050130576, 0.22993281, 1)
 
 [node name="level" parent="." unique_id=1563498389 instance=ExtResource("2_r6dh1")]
