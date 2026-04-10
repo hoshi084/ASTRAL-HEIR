@@ -31,7 +31,7 @@ texture = ExtResource("3_5s8vh")
 shape = SubResource("RectangleShape2D_dh7ns")
 
 [node name="Timer" type="Timer" parent="." unique_id=1848259388]
-wait_time = 0.973
+wait_time = 2.0
 autostart = true
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
