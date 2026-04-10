@@ -6,6 +6,7 @@ var partie_lancee = false
 var peut_selectionner = false
 
 var ennemi_scene = preload("res://ennemi.tscn")
+var chasseur_scene = preload("res://ennemi_2.tscn")
 
 func _ready():
 	$CameraMenu.make_current()
@@ -80,9 +81,16 @@ func _on_lancer_clique():
 
 func _on_timer_timeout():
 	for stele in $EmplacementsSteles.get_children():
-		var cristal = stele.get_node_or_null("Cristal")
+		# --- LIGNE À RAJOUTER CI-DESSOUS ---
+		var cristal = stele.get_node_or_null("Cristal") 
 		
+		var nouveau_monstre
+		if randf() > 0.7: 
+			nouveau_monstre = chasseur_scene.instantiate()
+		else:
+			nouveau_monstre = ennemi_scene.instantiate()
+			
+		# Maintenant "cristal" existe, donc cette ligne fonctionnera :
 		if cristal != null and cristal.est_allume == false:
-			var nouveau_monstre = ennemi_scene.instantiate()
-			$EmplacementsSteles.add_child(nouveau_monstre)
+			add_child(nouveau_monstre) # Mieux : add_child direct pour éviter les bugs de position
 			nouveau_monstre.global_position = stele.global_position

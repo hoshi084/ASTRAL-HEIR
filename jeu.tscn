@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://dom1qtagybol" path="res://personage.tscn" id="2_h8l20"]
 [ext_resource type="PackedScene" uid="uid://kyygabuluy1q" path="res://level2.tscn" id="2_r6dh1"]
 [ext_resource type="PackedScene" uid="uid://cjr3ln3xixv8n" path="res://cristal.tscn" id="3_h8l20"]
-[ext_resource type="PackedScene" uid="uid://c00cpwsjqgrpu" path="res://ennemi.tscn" id="4_0yqk5"]
 [ext_resource type="PackedScene" uid="uid://dqxo6utsa1p6h" path="res://menu_demarrage.tscn" id="5_0yqk5"]
 [ext_resource type="PackedScene" uid="uid://b37m5l8ti6flv" path="res://bar_stat.tscn" id="7_aw23n"]
 [ext_resource type="PackedScene" uid="uid://dbedhq2oa2083" path="res://mini_map_ui.tscn" id="8_0sqbu"]
@@ -14,6 +13,7 @@ scale = Vector2(3, 3)
 script = ExtResource("1_s1xry")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=549247770]
+visible = false
 color = Color(0.011155186, 0.050130576, 0.22993281, 1)
 
 [node name="level" parent="." unique_id=1563498389 instance=ExtResource("2_r6dh1")]
@@ -26,7 +26,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles1" unique_id=1597048029 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="Steles2" type="Marker2D" parent="EmplacementsSteles" unique_id=80551001]
 position = Vector2(1854.0001, -926.3333)
@@ -34,7 +33,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles2" unique_id=2016253947 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="Steles3" type="Marker2D" parent="EmplacementsSteles" unique_id=1097275069]
 position = Vector2(222, -574.3333)
@@ -42,7 +40,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles3" unique_id=1176026486 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="Steles4" type="Marker2D" parent="EmplacementsSteles" unique_id=442915064]
 position = Vector2(638, -941.6666)
@@ -50,7 +47,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles4" unique_id=185645602 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="Steles5" type="Marker2D" parent="EmplacementsSteles" unique_id=957496845]
 position = Vector2(30, -1486)
@@ -58,7 +54,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles5" unique_id=170265055 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="Steles6" type="Marker2D" parent="EmplacementsSteles" unique_id=1693097406]
 position = Vector2(1182, -1486)
@@ -66,7 +61,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles6" unique_id=1970017747 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="Steles7" type="Marker2D" parent="EmplacementsSteles" unique_id=1910250743]
 position = Vector2(1998.0001, -1630)
@@ -74,7 +68,6 @@ metadata/_edit_group_ = true
 
 [node name="Cristal" parent="EmplacementsSteles/Steles7" unique_id=263244934 instance=ExtResource("3_h8l20")]
 position = Vector2(1, 6)
-ennemi_scene = ExtResource("4_0yqk5")
 
 [node name="personage" parent="." unique_id=137360923 instance=ExtResource("2_h8l20")]
 position = Vector2(1117, -387.66666)

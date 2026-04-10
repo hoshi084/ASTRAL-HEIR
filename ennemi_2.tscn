@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://drr7f2abwvjrd"]
+
+[ext_resource type="Script" uid="uid://blg1uf0yxi21r" path="res://ennemi_2.gd" id="1_5wavc"]
+[ext_resource type="Texture2D" uid="uid://cwuygm5ll7klc" path="res://sprit/chasseur.png" id="2_5wavc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2du6w"]
+atlas = ExtResource("2_5wavc")
+region = Rect2(0, 0, 260, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ul1l"]
+atlas = ExtResource("2_5wavc")
+region = Rect2(0, 240, 260, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3ujf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2du6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ul1l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5npyw"]
+radius = 52.0
+height = 122.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qswgi"]
+radius = 54.999992
+height = 129.99998
+
+[node name="chasseur" type="CharacterBody2D" unique_id=1011395697 groups=["ennemis"]]
+position = Vector2(-4, -5)
+scale = Vector2(0.2, 0.2)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5wavc")
+
+[node name="TimerAttaque" type="Timer" parent="." unique_id=1104531833]
+wait_time = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=287955906]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_w3ujf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1700824646]
+shape = SubResource("CapsuleShape2D_5npyw")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1913697084]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=224131948]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=472240030]
+shape = SubResource("CapsuleShape2D_qswgi")
+
+[connection signal="timeout" from="TimerAttaque" to="." method="_on_timer_attaque_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_zone_degats_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_zone_degats_area_exited"]
