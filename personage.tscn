@@ -114,3 +114,11 @@ scale = Vector2(0.225, 0.225)
 energy = 0.8
 texture = ExtResource("4_1ss3c")
 metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1035288026]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1531948757]
+shape = SubResource("CapsuleShape2D_qqjgp")
+metadata/_edit_group_ = true
+
+[connection signal="area_entered" from="Area2D" to="." method="recevoir_degats"]

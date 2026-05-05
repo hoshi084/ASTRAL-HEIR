@@ -30,7 +30,7 @@ func rechercher_cible():
 	
 func _on_zone_degats_area_entered(area):
 	var objet = area.get_parent()
-	if objet.is_in_group("cristaux"):
+	if objet.name == "personage":
 		cible_actuelle = objet
 		timer_attaque.start() # On commence à frapper
 		frapper_cible() # Premier coup immédiat
@@ -44,5 +44,8 @@ func _on_timer_attaque_timeout():
 	frapper_cible()
 
 func frapper_cible():
-	if cible_actuelle and cible_actuelle.has_method("recevoir_degats"):
-		cible_actuelle.recevoir_degats(5)
+	if cible_actuelle:
+		print("Je frappe l'objet : ", cible_actuelle.name)
+		if cible_actuelle.has_method("recevoir_degats"):
+			var degat = 5
+			cible_actuelle.recevoir_degats(degat)

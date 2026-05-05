@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b61v7ywx58d82"]
 
 [ext_resource type="Script" uid="uid://b1jcv0g4pllf0" path="res://jeu.gd" id="1_s1xry"]
+[ext_resource type="PackedScene" uid="uid://djb6md417vck8" path="res://menu_game_over.tscn" id="2_0sqbu"]
 [ext_resource type="PackedScene" uid="uid://dom1qtagybol" path="res://personage.tscn" id="2_h8l20"]
 [ext_resource type="PackedScene" uid="uid://kyygabuluy1q" path="res://level2.tscn" id="2_r6dh1"]
 [ext_resource type="PackedScene" uid="uid://cjr3ln3xixv8n" path="res://cristal.tscn" id="3_h8l20"]
@@ -11,6 +12,12 @@
 [node name="jeu" type="Node2D" unique_id=1873003971]
 scale = Vector2(3, 3)
 script = ExtResource("1_s1xry")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1619511321]
+process_mode = 3
+
+[node name="MenuGameOver" parent="CanvasLayer" unique_id=1590055534 instance=ExtResource("2_0sqbu")]
+visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=549247770]
 color = Color(0.011155186, 0.050130576, 0.22993281, 1)
@@ -98,7 +105,9 @@ transform = Transform2D(0.22, 0, 0, 0.22, 0, 0)
 
 [node name="MiniMapUI" parent="." unique_id=1458660386 instance=ExtResource("8_0sqbu")]
 
+[connection signal="pressed" from="CanvasLayer/MenuGameOver/VBoxContainer/ButtonRejouer" to="." method="_on_button_rejouer_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
+[editable path="CanvasLayer/MenuGameOver"]
 [editable path="menuDemarrage"]
 [editable path="MiniMapUI"]

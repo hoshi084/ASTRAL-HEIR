@@ -7,13 +7,16 @@ var screen_size
 # on recupère la barre de mana
 @onready var mana_bar = get_tree().current_scene.get_node("barreStat/StatBar/ManaBar")
 
+var pv_max = 100
+var pv: int = 100
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
 
 
 func _process(delta):
-	var input_velocity = Vector2.ZERO 
+	var input_velocity = Vector2.ZERO
 	
 	# Récupération des touches
 	if Input.is_action_pressed("right"):
@@ -60,3 +63,15 @@ func tirer():
 	
 	get_parent().add_child(sort_instance)
 	
+func recevoir_degats(montant : int):
+	pv -= montant
+	if pv < 0:
+		pv = 0
+	
+	# On met à jour la barre visuelle
+	# get_node("../barreStat") dépend de ton arbre, 
+	# mais via le script principal c'est plus sûr :
+	get_tree().current_scene.get_node("barreStat").mettre_a_jour_pv_personnage(pv)
+	
+	# On vérifie si c'est le Game Over
+	get_tree().current_scene.verifier_fin_du_jeu()

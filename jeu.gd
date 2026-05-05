@@ -41,6 +41,7 @@ func mettre_a_jour_compteur(valeur):
 		$menuDemarrage/Control/ButtonLancer.show()
 	else:
 		$menuDemarrage/Control/ButtonLancer.hide()
+	verifier_fin_du_jeu()
 
 func _on_lancer_clique():
 	# on affiche la minimap
@@ -94,3 +95,34 @@ func _on_timer_timeout():
 		if cristal != null and cristal.est_allume == false:
 			add_child(nouveau_monstre) # Mieux : add_child direct pour éviter les bugs de position
 			nouveau_monstre.global_position = stele.global_position
+
+# Dans jeu.gd
+
+func verifier_fin_du_jeu():
+	var game_over = false
+	
+	# CONDITION 1 : Plus de cristaux allumés
+	if partie_lancee and cristaux_allumes <= 0:
+		game_over = true
+		print("Défaite : Tous les cristaux sont éteints !")
+
+	# CONDITION 2 : Le joueur est mort (PV à 0)
+	if $personage.pv <= 0:
+		game_over = true
+		print("Défaite : Le joueur n'a plus de PV !")
+
+	if game_over:
+		declencher_game_over()
+
+func declencher_game_over():
+	partie_lancee = false
+	get_tree().paused = true # Optionnel : Met le jeu en pause
+	$CanvasLayer/MenuGameOver.show()
+	$barreStat.hide()
+	$MiniMapUI.hide()
+
+
+func _on_button_rejouer_pressed() -> void:
+	print("Bouton cliqué !")
+	get_tree().paused = false # Enlever la pause
+	get_tree().reload_current_scene() # Relance tout le jeu proprement

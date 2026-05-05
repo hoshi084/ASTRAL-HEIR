@@ -85,3 +85,6 @@ func mettre_a_jour_barres_cristaux():
 
 func _on_recharge_mana_timeout():
 	mana_bar.value = min(mana_bar.max_value, mana_bar.value + 4)
+	
+func mettre_a_jour_pv_personnage(nouveau_pv):
+	pv_bar.value = nouveau_pv
