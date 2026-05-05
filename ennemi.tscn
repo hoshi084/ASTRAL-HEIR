@@ -37,7 +37,7 @@ height = 129.99998
 position = Vector2(-4, -5)
 scale = Vector2(0.2, 0.2)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 3
 script = ExtResource("1_5npyw")
 
 [node name="TimerAttaque" type="Timer" parent="." unique_id=1104531833]
