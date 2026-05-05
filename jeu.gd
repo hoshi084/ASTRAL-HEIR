@@ -8,6 +8,10 @@ var peut_selectionner = false
 var ennemi_scene = preload("res://ennemi.tscn")
 var chasseur_scene = preload("res://ennemi_2.tscn")
 
+
+var score : float = 0.0
+@onready var score_label = $barreStat/StatBar/ScoreLabel 
+
 func _ready():
 	$CameraMenu.make_current()
 	$personage.hide()
@@ -24,6 +28,24 @@ func _ready():
 	
 	peut_selectionner = false
 	await get_tree().create_timer(1.0).timeout
+	
+func _process(delta):
+	if partie_lancee:
+		# On calcule le gain : 25 points par cristal par seconde
+		var gain_par_seconde = cristaux_allumes * 25
+		
+		# On ajoute au score (delta permet d'avoir un ajout fluide par seconde)
+		score += gain_par_seconde * delta
+		
+		_mettre_a_jour_affichage_score()
+
+func _mettre_a_jour_affichage_score():
+	# On utilise floor() pour afficher un chiffre rond
+	$barreStat/StatBar2/ScoreLabel.text = str(floor(score))
+	
+func ajouter_score_ennemi():
+	score += 60
+	_mettre_a_jour_affichage_score()
 
 func _on_play_clique():
 	$menuDemarrage/Control/TextureRect.hide()
@@ -116,7 +138,8 @@ func verifier_fin_du_jeu():
 
 func declencher_game_over():
 	partie_lancee = false
-	get_tree().paused = true # Optionnel : Met le jeu en pause
+	get_tree().paused = true
+	$CanvasLayer/MenuGameOver/VBoxContainer/ScoreFinalLabel.text = "Score Final : " + str(floor(score))
 	$CanvasLayer/MenuGameOver.show()
 	$barreStat.hide()
 	$MiniMapUI.hide()

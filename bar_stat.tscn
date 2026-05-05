@@ -248,4 +248,28 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_wvjer")
 value = 100.0
 show_percentage = false
 
+[node name="StatBar2" type="Control" parent="." unique_id=13864690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.0486453, 1.3921369)
+pivot_offset = Vector2(692, 81)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_edit_group_ = true
+
+[node name="ScoreLabel" type="Label" parent="StatBar2" unique_id=564079465]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -140.0
+offset_bottom = 84.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 61
+text = "0000"
+
 [connection signal="timeout" from="StatBar/ManaBar/recharge_mana" to="." method="_on_recharge_mana_timeout"]
