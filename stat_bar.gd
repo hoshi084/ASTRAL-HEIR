@@ -2,7 +2,7 @@ extends CanvasLayer
 
 @onready var pv_bar = $StatBar/PvBar
 @onready var mana_bar = $StatBar/ManaBar
-@onready var terror_bar = $StatBar/TerrorBar
+@onready var coldown_bar = $StatBar/CooldownBar
 @onready var crystal1_bar = $StatBar/Crystal1Bar
 @onready var crystal2_bar = $StatBar/Crystal2Bar
 @onready var crystal3_bar = $StatBar/Crystal3Bar
@@ -28,9 +28,9 @@ func _ready():
 	mana_bar.max_value = 100
 	mana_bar.value = 100
 
-	terror_bar.min_value = 0
-	terror_bar.max_value = 100
-	terror_bar.value = 0
+	coldown_bar.min_value = 0
+	coldown_bar.max_value = 1
+	coldown_bar.value = 1
 
 	crystal1_bar.min_value = 0
 	crystal1_bar.max_value = 100

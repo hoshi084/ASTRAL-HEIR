@@ -168,7 +168,6 @@ offset_bottom = 72.66666
 theme_override_styles/background = SubResource("StyleBoxFlat_4d86h")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6fkvr")
 value = 80.0
-show_percentage = false
 
 [node name="ManaBar" type="ProgressBar" parent="StatBar" unique_id=728655862]
 layout_mode = 0
@@ -179,12 +178,12 @@ offset_bottom = 174.66666
 theme_override_styles/background = SubResource("StyleBoxFlat_0rv0m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_obs4i")
 value = 80.0
-show_percentage = false
 
 [node name="recharge_mana" type="Timer" parent="StatBar/ManaBar" unique_id=305904333]
 wait_time = 0.09
 
-[node name="TerrorBar" type="ProgressBar" parent="StatBar" unique_id=347729696]
+[node name="CooldownBar" type="ProgressBar" parent="StatBar" unique_id=347729696]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 598.0
 offset_top = -18.333344
@@ -192,8 +191,8 @@ offset_right = 783.0
 offset_bottom = 172.66666
 theme_override_styles/background = SubResource("StyleBoxFlat_w7f7a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_07b14")
-value = 72.63
-show_percentage = false
+max_value = 1.0
+value = 1.0
 
 [node name="Label" type="Label" parent="StatBar/TerrorBar" unique_id=1511123539]
 layout_mode = 0
