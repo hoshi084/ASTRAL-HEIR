@@ -191,8 +191,9 @@ offset_right = 782.7912
 offset_bottom = 172.87184
 theme_override_styles/background = SubResource("StyleBoxFlat_w7f7a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_07b14")
-max_value = 1.0
-value = 1.0
+max_value = 0.1
+value = 0.1
+fill_mode = 3
 show_percentage = false
 
 [node name="Crystal1Bar" type="ProgressBar" parent="StatBar" unique_id=1619583810]
