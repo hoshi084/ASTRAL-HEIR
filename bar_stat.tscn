@@ -193,15 +193,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_w7f7a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_07b14")
 max_value = 1.0
 value = 1.0
-
-[node name="Label" type="Label" parent="StatBar/TerrorBar" unique_id=1511123539]
-layout_mode = 0
-offset_left = 79.226
-offset_top = 55.332
-offset_right = 89.226
-offset_bottom = 78.332
-scale = Vector2(4, 4)
-text = "1"
+show_percentage = false
 
 [node name="Crystal1Bar" type="ProgressBar" parent="StatBar" unique_id=1619583810]
 layout_mode = 0
@@ -257,6 +249,15 @@ theme_override_styles/background = SubResource("StyleBoxFlat_n1yn5")
 theme_override_styles/fill = SubResource("StyleBoxFlat_wvjer")
 value = 100.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="StatBar" unique_id=1511123539]
+layout_mode = 0
+offset_left = 672.47473
+offset_top = 52.267334
+offset_right = 682.47473
+offset_bottom = 75.267334
+scale = Vector2(4, 4)
+text = "1"
 
 [node name="StatBar2" type="Control" parent="." unique_id=13864690]
 layout_mode = 3
