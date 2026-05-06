@@ -32,6 +32,6 @@ reste a faire :
 
 depuis le dernier cour voila ce qui a été fait
 
-mathéo : a créé la premier potion (vie), à rajouter le scort, a rajouter le game over et a ajouter le coldow des arme
+mathéo : a créé la premier potion (vie), à rajouter le score, a rajouter le game over et a ajouter le coldow des armes
 
 eraste : a créé la deuxième potion (mana) et le deuxième sort
