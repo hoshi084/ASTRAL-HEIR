@@ -181,7 +181,7 @@ value = 80.0
 show_percentage = false
 
 [node name="recharge_mana" type="Timer" parent="StatBar/ManaBar" unique_id=305904333]
-wait_time = 0.3
+wait_time = 0.09
 
 [node name="TerrorBar" type="ProgressBar" parent="StatBar" unique_id=347729696]
 layout_mode = 0

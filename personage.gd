@@ -78,13 +78,21 @@ func utiliser_potion():
 		print("Plus de potion disponible !")
 		
 func tirer():
-	var sort_instance = sort_scene.instantiate()
-	mana_bar.value -= 6
-	sort_instance.position = position 
-	
-	sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
-	
-	get_parent().add_child(sort_instance)
+	# On vérifie si on a assez de mana avant de faire quoi que ce soit
+	if mana_bar.value >= 6:
+		var sort_instance = sort_scene.instantiate()
+		
+		# On consomme le mana
+		mana_bar.value -= 6
+		
+		# Le reste de ton code pour le tir
+		sort_instance.position = position 
+		sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
+		get_parent().add_child(sort_instance)
+		
+		print("Sort lancé ! Mana restant : ", mana_bar.value)
+	else:
+		print("Pas assez de mana !")
 	
 func recevoir_degats(montant : int):
 	pv -= montant
