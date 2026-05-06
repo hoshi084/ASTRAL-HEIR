@@ -8,6 +8,7 @@ extends CanvasLayer
 @onready var crystal3_bar = $StatBar/Crystal3Bar
 @onready var crystal4_bar = $StatBar/Crystal4Bar
 @onready var recharge_mana = $StatBar/ManaBar/recharge_mana
+@onready var label = $StatBar/TerrorBar/Label
 
 var Cristal_pv1 = null
 var Cristal_pv2 = null
@@ -46,6 +47,16 @@ func _ready():
 	crystal4_bar.min_value = 0
 	crystal4_bar.max_value = 100
 	crystal4_bar.value = 0
+
+func _process(delta):
+	if Input.is_action_just_pressed("arme"):
+		changer_arme()
+
+func changer_arme():
+	if label.text == "1":
+		label.text = "2"
+		return
+	label.text = "1"
 
 func enregistrer_cristaux_allumes():
 	var cristaux = get_tree().get_nodes_in_group("cristaux")
