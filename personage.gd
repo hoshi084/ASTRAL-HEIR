@@ -70,7 +70,7 @@ func utiliser_potion(potion):
 		if potion == "potion_vie":
 			
 			pv += 25
-			# On s'assure de ne pas dépasser le maximum
+			# On s'assure de ne pas dépasser le maximum 
 			if pv > pv_max:
 				pv = pv_max
 				
