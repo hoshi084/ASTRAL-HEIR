@@ -7,7 +7,7 @@ Astral Heir
     Astral Heir est un jeu de survie et de défense développé avec le moteur Godot. Vous y incarnez un mage puissant, dernier héritier des astres, dont la mission est de protéger 4 cristaux ancestraux face à des vagues de monstres.
 
   Systèmes & Gameplay
-    Concept : Le jeu mélange "Tower Defense" et "Action-RPG". L'originalité réside dans la gestion des 4 cristaux : chaqu'un donne un bonus il. Il faut constamment se déplacer pour surveiller tous les cristaux.
+    Concept : Le jeu mélange "Tower Defense" et "Action-RPG". L'originalité réside dans la gestion des 4 cristaux : chacun donne un bonus il. Il faut constamment se déplacer pour surveiller tous les cristaux.
     
   Contrôles :
 
@@ -30,8 +30,8 @@ reste a faire :
 - [x] modification du fond noir
 - [x] correction des bug de sprite
 
-depuis le dernier cour voila ce qui a été fait
+depuis le dernier cours voilà ce qui a été fait :
 
-mathéo : a créé la premier potion (vie), à rajouter le score, a rajouter le game over et a ajouter le coldow des armes
+  mathéo : a créé la premier potion (vie), a rajouté le score, a rajouté le game over et a ajouté le cooldown des armes
 
-eraste : a créé la deuxième potion (mana) et le deuxième sort
+  eraste : a créé la deuxième potion (mana) et le deuxième sort
