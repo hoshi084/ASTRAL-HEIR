@@ -121,7 +121,7 @@ func utiliser_potion(potion):
 func tirer():
  # On ajoute une condition : est-ce que le timer est arrêté ?
 	if mana_bar.value >= 6 and cooldown_sort.is_stopped():
-		var sort_instance = sort_scene.instantiate()
+		
 		
 		# On consomme le mana
 		mana_bar.value -= 6
@@ -130,28 +130,35 @@ func tirer():
 		cooldown_sort.start()
 		  
 		if nbr_arm.text == "1":
+			var sort_instance = sort_scene.instantiate()
 			sort_instance.position = position 
 			sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
 			get_parent().add_child(sort_instance)
 			$CooldownSort.wait_time = 0.1
 		else:
-			# On crée une liste de décalages (en degrés)
-			var angles = [0, 5, -5]
-
-			# On récupère la direction de base vers la souris
+			$CooldownSort.wait_time = 0.3
 			var direction_base = (get_global_mouse_position() - global_position).normalized()
-
-			for angle in angles:
-				var sort_instance_triple = sort_scene.instantiate()
-				sort_instance_triple.position = position
-				 
-				# On applique la rotation sur la direction de base
-				var direction_finale = direction_base.rotated(deg_to_rad(angle))
-				sort_instance_triple.direction = direction_finale
-			 
-				get_parent().add_child(sort_instance_triple)
-				$CooldownSort.wait_time = 0.3
 			
+			# On définit nos décalages sur la ligne de tir (en pixels)
+			# 20 : devant / 0 : au centre / -20 : derrière
+			var offsets_ligne = [20, 0, -10]
+			
+			# On garde tes angles si tu veux qu'ils s'écartent quand même un peu
+			var angles = [0, 5, -5] 
+
+			for i in range(3):
+				var sort_instance = sort_scene.instantiate()
+				
+				# POSITION : On avance ou on recule sur la ligne de tir
+				# (direction_base * offsets_ligne[i]) décale le sort vers l'avant ou l'arrière
+				sort_instance.position = position + (direction_base * offsets_ligne[i])
+				
+				# DIRECTION : On applique l'angle
+				sort_instance.direction = direction_base.rotated(deg_to_rad(angles[i]))
+				
+				get_parent().add_child(sort_instance)
+			$CooldownSort.wait_time = 0.3
+
 func recevoir_degats(montant : int):
 	pv -= montant
 	if pv < 0:

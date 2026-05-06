@@ -12,7 +12,7 @@ var chasseur_scene = preload("res://ennemi_2.tscn")
 
 
 var score : float = 0.0
-@onready var score_label = $barreStat/StatBar/ScoreLabel 
+@onready var score_label = $barreStat/StatBar2/ScoreLabel 
 
 func _ready():
 	$CameraMenu.make_current()
