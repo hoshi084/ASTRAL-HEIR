@@ -6,6 +6,7 @@ var screen_size
 
 # on recupère la barre de mana
 @onready var mana_bar = get_tree().current_scene.get_node("barreStat/StatBar/ManaBar")
+@onready var nbr_arm = get_tree().current_scene.get_node("barreStat/StatBar/Label")
 
 const pv_max = 100
 var pv: int = 100
@@ -128,10 +129,13 @@ func tirer():
 		# On lance le cooldown
 		cooldown_sort.start()
 		
-		# Le reste de ton code pour le tir
-		sort_instance.position = position 
-		sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
-		get_parent().add_child(sort_instance)
+		if nbr_arm.text == "1":
+			sort_instance.position = position 
+			sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
+			get_parent().add_child(sort_instance)
+		else:
+			print("test")
+		
 		
 		print("Sort lancé ! Prochain tir dans ", cooldown_sort.wait_time, "s")
 	elif not cooldown_sort.is_stopped():

@@ -185,10 +185,10 @@ wait_time = 0.09
 [node name="CooldownBar" type="ProgressBar" parent="StatBar" unique_id=347729696]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 598.0
-offset_top = -18.333344
-offset_right = 783.0
-offset_bottom = 172.66666
+offset_left = 597.7912
+offset_top = -18.128159
+offset_right = 782.7912
+offset_bottom = 172.87184
 theme_override_styles/background = SubResource("StyleBoxFlat_w7f7a")
 theme_override_styles/fill = SubResource("StyleBoxFlat_07b14")
 max_value = 1.0
@@ -251,6 +251,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="StatBar" unique_id=1511123539]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 672.47473
 offset_top = 52.267334
