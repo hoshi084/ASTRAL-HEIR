@@ -83,7 +83,7 @@ func utiliser_potion(potion):
 			get_node("../barreStat/%Potion").hide()
 			
 		elif potion == "potion_mana":
-			mana += 50
+			mana += 25
 			# On s'assure de ne pas dépasser le maximum
 			if mana > mana_max:
 				mana = mana_max
