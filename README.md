@@ -18,7 +18,7 @@ Astral Heir
 reste a faire :
 
 - [x] ajoute de pv du joueur
-- [ ] ajoute d'un colldown au sort
+- [x] ajoute d'un colldown au sort
 - [ ] ajoute d'une deuxième arme de type fusil a pompe
 - [x] ajoue d'un écran de game over
 - [x] modification du fond noir
