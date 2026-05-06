@@ -88,3 +88,6 @@ func _on_recharge_mana_timeout():
 	
 func mettre_a_jour_pv_personnage(nouveau_pv):
 	pv_bar.value = nouveau_pv
+
+func mettre_a_jour_mana_personnage(nouveau_mana):
+	mana_bar.value = nouveau_mana
