@@ -16,9 +16,17 @@ var mana: int = 100
 var a_potion_vie : bool = true # Possède la potion au début
 var a_potion_mana : bool = true # Possède la potion au début
 
+@onready var cooldown_sort = $CooldownSort
+
+@onready var cooldown_bar = get_node("../barreStat/StatBar/%CooldownBar")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
+	
+	cooldown_bar.max_value = cooldown_sort.wait_time
+	cooldown_bar.value = cooldown_bar.max_value
 
 
 func _process(delta):
@@ -53,7 +61,16 @@ func _process(delta):
 		velocity = Vector2.ZERO
 		$AnimatedSprite2D.stop()
 		
-	if Input.is_action_just_pressed("click_gauche"):
+	if not cooldown_sort.is_stopped():
+		# Le timer tourne : la barre se remplit
+		# (wait_time - time_left) donne le temps écoulé
+		cooldown_bar.value = cooldown_sort.wait_time - cooldown_sort.time_left
+	else:
+		# Le timer est arrêté : la barre est pleine (prêt à tirer)
+		cooldown_bar.value = cooldown_sort.wait_time
+
+	# Ton code de tir
+	if Input.is_action_pressed("click_gauche"):
 		tirer()
 		
 	move_and_slide() # Cette fonction utilise 'velocity' et gère les collisions toute seule
@@ -101,19 +118,24 @@ func utiliser_potion(potion):
 		print("Plus de potion disponible !")
 		
 func tirer():
-	# On vérifie si on a assez de mana avant de faire quoi que ce soit
-	if mana_bar.value >= 6:
+	# On ajoute une condition : est-ce que le timer est arrêté ?
+	if mana_bar.value >= 6 and cooldown_sort.is_stopped():
 		var sort_instance = sort_scene.instantiate()
 		
 		# On consomme le mana
 		mana_bar.value -= 6
+		
+		# On lance le cooldown
+		cooldown_sort.start()
 		
 		# Le reste de ton code pour le tir
 		sort_instance.position = position 
 		sort_instance.direction = (get_global_mouse_position() - global_position).normalized()
 		get_parent().add_child(sort_instance)
 		
-		print("Sort lancé ! Mana restant : ", mana_bar.value)
+		print("Sort lancé ! Prochain tir dans ", cooldown_sort.wait_time, "s")
+	elif not cooldown_sort.is_stopped():
+		print("Sort en recharge...")
 	else:
 		print("Pas assez de mana !")
 	
