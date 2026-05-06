@@ -67,7 +67,7 @@ func _input(event):
 func utiliser_potion(potion):
 	if a_potion_vie || a_potion_mana:
 		
-		if potion == "potion_vie":
+		if potion == "potion_vie" && a_potion_vie:
 			
 			pv += 25
 			# On s'assure de ne pas dépasser le maximum 
@@ -82,7 +82,7 @@ func utiliser_potion(potion):
 			
 			get_node("../barreStat/%Potion").hide()
 			
-		elif potion == "potion_mana":
+		elif potion == "potion_mana" && a_potion_mana:
 			mana += 25
 			# On s'assure de ne pas dépasser le maximum
 			if mana > mana_max:
