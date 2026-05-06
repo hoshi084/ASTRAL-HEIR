@@ -19,7 +19,13 @@ reste a faire :
 
 - [x] ajoute de pv du joueur
 - [x] ajoute d'un colldown au sort
-- [ ] ajoute d'une deuxième arme de type fusil a pompe
+- [x] ajoute d'une deuxième arme de type fusil a pompe
 - [x] ajoue d'un écran de game over
 - [x] modification du fond noir
 - [x] correction des bug de sprite
+
+depuis le dernier cour voila ce qui a été fait
+
+mathéo : a créé la premier potion (vie), à rajouter le scort, a rajouter le game over et a ajouter le coldow des arme
+
+eraste : a créé la deuxième potion (mana) et le deuxième sort
