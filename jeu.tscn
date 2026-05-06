@@ -110,4 +110,5 @@ transform = Transform2D(0.22, 0, 0, 0.22, 0, 0)
 
 [editable path="CanvasLayer/MenuGameOver"]
 [editable path="menuDemarrage"]
+[editable path="barreStat"]
 [editable path="MiniMapUI"]

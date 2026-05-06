@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cs3tspfwehhcu" path="res://stat_bar.gd" id="1_smgcs"]
 [ext_resource type="Texture2D" uid="uid://dgjit5afx4qbh" path="res://sprit/barre de stat.png" id="2_kkcy1"]
 [ext_resource type="Texture2D" uid="uid://dk4siedrbwtl4" path="res://sprit/portrait.png" id="3_rl6q0"]
+[ext_resource type="Texture2D" uid="uid://2pnr3d47hfle" path="res://sprit/potion.png" id="4_kkcy1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4d86h"]
 content_margin_left = 2.0
@@ -271,5 +272,20 @@ offset_bottom = 84.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 61
 text = "0000"
+
+[node name="Potion" type="TextureRect" parent="." unique_id=1732792226]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4046.0
+offset_top = 2522.0
+offset_right = 3064.0
+offset_bottom = 2129.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kkcy1")
+expand_mode = 1
+stretch_mode = 6
 
 [connection signal="timeout" from="StatBar/ManaBar/recharge_mana" to="." method="_on_recharge_mana_timeout"]

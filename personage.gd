@@ -10,6 +10,8 @@ var screen_size
 var pv_max = 100
 var pv: int = 100
 
+var a_potion : bool = true # Possède la potion au début
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -52,8 +54,29 @@ func _process(delta):
 		
 	move_and_slide() # Cette fonction utilise 'velocity' et gère les collisions toute seule
 	
+func _input(event):
+	if event.is_action_pressed("potion"): # On va configurer cette touche
+		utiliser_potion()
 
-
+func utiliser_potion():
+	if a_potion:
+		pv += 25
+		# On s'assure de ne pas dépasser le maximum
+		if pv > pv_max:
+			pv = pv_max
+			
+		a_potion = false # Potion consommée !
+		print("Potion utilisée ! PV actuels : ", pv)
+		
+		# Mise à jour visuelle de ta barre de vie
+		get_tree().current_scene.get_node("barreStat").mettre_a_jour_pv_personnage(pv)
+		
+		get_node("../barreStat/%Potion").hide()
+		# Optionnel : Cacher l'icône de la potion dans ton UI
+		# %IconePotion.hide() 
+	else:
+		print("Plus de potion disponible !")
+		
 func tirer():
 	var sort_instance = sort_scene.instantiate()
 	mana_bar.value -= 6
@@ -68,10 +91,6 @@ func recevoir_degats(montant : int):
 	if pv < 0:
 		pv = 0
 	
-	# On met à jour la barre visuelle
-	# get_node("../barreStat") dépend de ton arbre, 
-	# mais via le script principal c'est plus sûr :
 	get_tree().current_scene.get_node("barreStat").mettre_a_jour_pv_personnage(pv)
 	
-	# On vérifie si c'est le Game Over
 	get_tree().current_scene.verifier_fin_du_jeu()

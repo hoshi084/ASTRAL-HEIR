@@ -15,3 +15,6 @@ func take_damage(amount):
 	pv -= amount
 	pv = clamp(pv, 0, max_pv)
 	value = pv
+	
+func poition_off():
+	$Potion.show()

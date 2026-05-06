@@ -1,4 +1,6 @@
 extends Node2D
+var record : float = 0.0
+const SAVE_PATH = "user://record.save"
 
 var cristaux_allumes = 0
 const LIMITE_CRISTAUX = 4
@@ -28,6 +30,8 @@ func _ready():
 	
 	peut_selectionner = false
 	await get_tree().create_timer(1.0).timeout
+	
+	charger_record()
 	
 func _process(delta):
 	if partie_lancee:
@@ -139,7 +143,28 @@ func verifier_fin_du_jeu():
 func declencher_game_over():
 	partie_lancee = false
 	get_tree().paused = true
-	$CanvasLayer/MenuGameOver/VBoxContainer/ScoreFinalLabel.text = "Score Final : " + str(floor(score))
+	
+	# Vérification du record
+	var nouveau_record = false
+	if score > record:
+		record = score
+		sauvegarder_record()
+		nouveau_record = true
+	
+	# Affichage sur l'écran Game Over
+	# Assure-toi d'avoir ces deux Labels dans ton MenuGameOver
+	var label_score = $CanvasLayer/MenuGameOver/VBoxContainer/ScoreFinalLabel
+	var label_record = $CanvasLayer/MenuGameOver/VBoxContainer/ScoreRecord
+	
+	label_score.text = "Score : " + str(floor(score))
+	
+	if nouveau_record:
+		label_record.text = "NOUVEAU RECORD ! : " + str(floor(record))
+		label_record.modulate = Color.GOLD # Petit effet sympa en doré
+	else:
+		label_record.text = "Meilleur Score : " + str(floor(record))
+		label_record.modulate = Color.WHITE
+
 	$CanvasLayer/MenuGameOver.show()
 	$barreStat.hide()
 	$MiniMapUI.hide()
@@ -149,3 +174,14 @@ func _on_button_rejouer_pressed() -> void:
 	print("Bouton cliqué !")
 	get_tree().paused = false # Enlever la pause
 	get_tree().reload_current_scene() # Relance tout le jeu proprement
+
+func sauvegarder_record():
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	file.store_var(record)
+	file.close()
+
+func charger_record():
+	if FileAccess.file_exists(SAVE_PATH):
+		var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+		record = file.get_var()
+		file.close()

@@ -30,7 +30,7 @@ offset_right = 307.0
 offset_bottom = 244.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 60
+theme_override_constants/separation = 52
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=438196371]
 layout_mode = 2
@@ -41,7 +41,12 @@ text = "GAME OVER"
 [node name="ScoreFinalLabel" type="Label" parent="VBoxContainer" unique_id=492370083]
 layout_mode = 2
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 82
+theme_override_font_sizes/font_size = 45
+
+[node name="ScoreRecord" type="Label" parent="VBoxContainer" unique_id=356905849]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 45
 
 [node name="ButtonRejouer" type="Button" parent="VBoxContainer" unique_id=1483483187]
 process_mode = 3
