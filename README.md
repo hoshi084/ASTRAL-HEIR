@@ -15,6 +15,12 @@ Astral Heir
 
    click gauche : tire un sort
 
+   e : utilisation de la potion de vie
+
+   espace : utilisation de la potion de mana
+
+   f : changement d'arme (pour l'instant juste un label 1 et 2 qui indique on est sur quelle arme)
+
 reste a faire :
 
 - [x] ajoute de pv du joueur
