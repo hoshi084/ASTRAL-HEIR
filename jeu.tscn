@@ -20,7 +20,11 @@ process_mode = 3
 visible = false
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=549247770]
+<<<<<<< Updated upstream
 color = Color(0.011764706, 0, 0, 1)
+=======
+color = Color(0, 0, 0, 1)
+>>>>>>> Stashed changes
 
 [node name="level" parent="." unique_id=1563498389 instance=ExtResource("2_r6dh1")]
 
